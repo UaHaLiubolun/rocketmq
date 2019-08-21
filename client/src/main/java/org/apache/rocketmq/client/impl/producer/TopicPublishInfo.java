@@ -66,6 +66,12 @@ public class TopicPublishInfo {
         this.haveTopicRouterInfo = haveTopicRouterInfo;
     }
 
+    /**
+     * 选择下一个队列
+     * RocketMq的队列选择方式是一个线程中轮询
+     * @param lastBrokerName 上一次失败的BrokerName
+     * @return 返回队列
+     */
     public MessageQueue selectOneMessageQueue(final String lastBrokerName) {
         if (lastBrokerName == null) {
             return selectOneMessageQueue();
