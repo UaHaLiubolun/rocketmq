@@ -27,6 +27,13 @@ public class Message implements Serializable {
 
     private String topic;
     private int flag;
+
+    /**
+     * tag 消息Tag 用于消息过滤
+     * keys 消息的索引键 用于快速查找消息
+     * waitStoreMsgOk 消息发送是否等待消息存储完成后在返回
+     * delayTimeLevel 消息延迟级别
+     */
     private Map<String, String> properties;
     private byte[] body;
     private String transactionId;
